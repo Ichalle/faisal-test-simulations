@@ -127,18 +127,18 @@ export default {
 </script>
 
 <style>
+html{
+  background: #0A0A0A;
+}
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
 }
 
 header {
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-  padding: 20px;
-  background-color: #ffffff;
-  border-bottom: 2px solid #e0e0e0;
+  padding: .5rem;
+  background-color: #12181F;
+  color: #EDEDED;
   text-align: center;
 }
 
@@ -149,7 +149,6 @@ header {
 
 h1 {
   font-size: 24px;
-  color: #333333;
 }
 
 .grid-container {
@@ -179,12 +178,17 @@ h1 {
 }
 
 .controls {
+  color: #EDEDED;
   display: flex;
-  /* justify-content: center; */
   flex-direction: column;
   align-items: center;
-  gap: 20px;
   margin-top: 20px;
+}
+.controls p{
+  margin: 0;
+}
+.controls img{
+  filter: invert(1);
 }
 
 button {

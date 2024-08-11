@@ -1,16 +1,27 @@
-# robot-grid-simulations
+# Robot Simulator
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is a robot simulator built using Vue.js. The robot can be controlled on a 5x5 grid, where it can move forward in the direction it's facing or rotate to face different cardinal directions. The simulator is designed with a Bellroy-inspired aesthetic.
 
-## Recommended IDE Setup
+## Demo
+Demo [Click Here](https://vitejs.dev/config/).
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Table of Contents
 
-## Customize configuration
+- [Installation](#installation)
+- [Usage](#usage)
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Installation
 
-## Project Setup
+To get started with the Bellroy Robot Simulator, you need to have [Node.js](https://nodejs.org/) installed. Follow the steps below:
+
+Clone the repository:
+
+
+```sh
+git clone https://github.com/Ichalle/robot-grid-simulations.git
+cd robot-grid-simulations
+```
+
 
 ```sh
 npm install
@@ -33,3 +44,11 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## Usage
+Once the simulator is running, you'll see a 5x5 grid with a robot initially positioned at the top-left corner facing north. You can control the robot using the buttons on the screen or with your keyboard.
+
+Controls
+W Key / Move Forward Button: Moves the robot one step forward in the direction it is currently facing.
+A Key / Rotate Left Button: Rotates the robot 90 degrees counterclockwise.
+D Key / Rotate Right Button: Rotates the robot 90 degrees clockwise.

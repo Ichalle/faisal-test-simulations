@@ -2,9 +2,10 @@
   <div id="app" @click="refocusInput">
     <header>
       <h1>Bellroy Robot Simulator</h1>
-      <p>Author: Faisal Santosa, 11 Aug 2024</p>
+      <small>Author: Faisal Santosa, </small>
+      <small>Email: fmulya89@gmail.com</small>
     </header>
-    <div class="grid-container">
+    <div class="grid-container box">
       <div v-for="(row, rowIndex) in 5" :key="rowIndex" class="grid-row">
         <div
           v-for="(col, colIndex) in 5"
@@ -208,5 +209,35 @@ button:hover {
   position: absolute;
   left: -9999px;
 }
+.box {
+  padding: 2rem;
+  --border-size: 3px;
+  --border-angle: 0turn;
+  background-image: conic-gradient(from var(--border-angle), #213, #112 50%, #213), conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+  background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)), cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-animation: bg-spin 3s linear infinite;
+          animation: bg-spin 3s linear infinite;
+}
+@-webkit-keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+.box:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
 
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
 </style>

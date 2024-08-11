@@ -1,47 +1,100 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+    <h1>Bellroy Robot Simulator</h1>
   </header>
+  <div class="grid-container">
+    <div v-for="(row, rowIndex) in 5" :key="rowIndex" class="grid-row">
+      <div
+        v-for="(col, colIndex) in 5"
+        :key="colIndex"
+        class="grid-cell"
+        :class="{ robot: isRobotPosition(rowIndex, colIndex) }"
+      >
+        <span v-if="isRobotPosition(rowIndex, colIndex)">
+          {{ arrowCharacter }}
+        </span>
+      </div>
+    </div>
+  </div>
 
-  <main>
-    <TheWelcome />
-  </main>
 </template>
 
-<style scoped>
+<script>
+// import HelloWorldVue from "./components/HelloWorld.vue";
+export default {
+  name: "App",
+  components: {
+    // HelloWorld: HelloWorldVue,
+  },
+  data() {
+    return {
+      robot: {
+        x: 0,
+        y: 0,
+        direction: "N", // N, E, S, W
+      },
+    };
+  },
+  computed: {
+    arrowCharacter() {
+      switch (this.robot.direction) {
+        case "N":
+          return "↑";
+        case "E":
+          return "→";
+        case "S":
+          return "↓";
+        case "W":
+          return "←";
+        default:
+          return "";
+      }
+    },
+  },
+};
+</script>
+<style>
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f2f2f2;
+}
+
 header {
-  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #e0e0e0;
 }
 
 .logo {
-  display: block;
-  margin: 0 auto 2rem;
+  width: 100px;
+  margin-right: 10px;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+h1 {
+  font-size: 24px;
+  color: #333333;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.grid-row {
+  display: flex;
+}
+
+.grid-cell {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

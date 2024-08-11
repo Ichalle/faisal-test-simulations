@@ -5,6 +5,7 @@ This project is a robot simulator built using Vue.js. The robot can be controlle
 ## Demo
 Demo [Click Here](https://moonlit-pegasus-c90283.netlify.app/).
 
+![Screen Capture](src/assets/screen-capture.gif)
 
 ## Table of Contents
 
